@@ -15,8 +15,10 @@ init_data$Global_intensity <- as.numeric(init_data$Global_intensity)
 ##subset data for first two days of Feb-2007
 Sub_Data <- subset(init_data, Date == "2007-02-01" | Date == "2007-02-02")
 
-##plot histogram
-png("plot1.png", width=480, height=480)
-hist(Sub_Data$Global_active_power, main = "Global Active Power", 
-     xlab = "Global Active Power (kilowatts)", col = "red")
+timestamp <- strptime(paste(Sub_Data$Date, Sub_Data$Time, 
+                            sep = " "), format = "%Y-%m-%d %H:%M:%S")
+
+##plot line graph
+png("plot2.PNG", width = 480, height = 480)
+plot(timestamp, Sub_Data$Global_active_power, ylab = "Global Active Power", xlab = "", type = "l")
 dev.off()
