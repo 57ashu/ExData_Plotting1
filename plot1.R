@@ -1,5 +1,3 @@
-library(ggplot2)
-
 ##reading data
 init_data <- read.table("household_power_consumption.txt", sep = ";", 
                         header = T)
