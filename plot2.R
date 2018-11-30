@@ -19,6 +19,6 @@ timestamp <- strptime(paste(Sub_Data$Date, Sub_Data$Time,
                             sep = " "), format = "%Y-%m-%d %H:%M:%S")
 
 ##plot line graph
-png("plot2.PNG", width = 480, height = 480)
+png("plot2.png", width = 480, height = 480)
 plot(timestamp, Sub_Data$Global_active_power, ylab = "Global Active Power", xlab = "", type = "l")
 dev.off()
